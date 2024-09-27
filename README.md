@@ -1,8 +1,5 @@
 # trace
-## Hack GT Project
-
-Contributers:
-</br>
+## Contributers
 Heet Shah
 </br>
 Basil Khwaja

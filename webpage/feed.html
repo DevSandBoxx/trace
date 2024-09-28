@@ -51,10 +51,13 @@
       <div class="swiper-wrapper">
         <div class="swiper-slide">
 
-          <video class="video-container" controls playsinline>
+          <video id="video" class="video-container" controls playsinline>
             <source src="videos/jk.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
+          <!-- Canvas element to draw poses on -->
+          <canvas id="outputCanvas" width="180" height="320"
+            style="z-index: 1;"></canvas>
 
         </div>
         <div class="swiper-slide">
@@ -82,5 +85,12 @@
             centeredSlides: true,
         });
     </script>
+
+    <!-- TensorFlow.js and Pose Detection Model Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@tensorflow-models/pose-detection"></script>
+    <!-- Link to your JavaScript file -->
+    <script src="app.js"></script>
   </body>
 </html>

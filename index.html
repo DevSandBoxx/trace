@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoveNet Pose Detection</title>
+</head>
+<body>
+    <h1>Pose Detection with MoveNet</h1>
+    <!-- Video element to load the MP4 video -->
+    <video id="video" width="640" height="480" controls></video>
+    <!-- Canvas element to draw poses on -->
+    <canvas id="outputCanvas" width="640" height="480"></canvas>
+    
+    <!-- TensorFlow.js and Pose Detection Model Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/pose-detection"></script>
+    <!-- Link to your JavaScript file -->
+    <script src="app.js"></script>
+</body>
+</html>
+
+

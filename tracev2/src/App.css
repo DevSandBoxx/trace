@@ -1,0 +1,88 @@
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, black, #703621);
+  padding: 20px;
+}
+
+header {
+  color: white;
+  text-align: center;
+  background-color: transparent;
+  font-family: 'Lucida Sans', sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  margin: 10px;
+}
+
+main {
+  color: white;
+  font-family: 'Lucida Sans', sans-serif;
+}
+
+.video-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.video-element {
+  width: 500px;
+  height: 350px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.cool-button {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin: 10px;
+}
+
+.cool-button:hover {
+  background-color: white;
+  color: black;
+}
+
+.recording-indicator {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: red;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+footer {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: white;
+}

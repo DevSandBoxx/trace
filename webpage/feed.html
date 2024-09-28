@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Vertical Video Feed Carousel</title>
+    <link rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style>
+        .swiper-container {
+            width: 100%;
+            height: 80vh;
+            /* margin-top: 10px; */
+        }
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .video-container {
+            width: 22.5vw;  /* Width set to 9% of the viewport width */
+            height: 40vw; /* Height set to 16% of the viewport width to maintain 9:16 aspect ratio */
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            border-radius: 10px;
+        }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>--- TRACE ---</h1>
+
+    </header>
+    <nav>
+      <div style="display: flex; justify-content: center;">
+        <div><a href="index.html"
+            style="color: white; text-decoration: none;  list-style-type: none; margin: 10px;">Home</a></div>
+        <div><a href="feed.html"
+            style="color: white; text-decoration: none;  list-style-type: none; margin: 10px;">Feed</a></div>
+        <div><a href="login.html"
+            style="color: white; text-decoration: none;  list-style-type: none; margin: 10px;">Login</a></div>
+      </div>
+    </nav>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+
+          <video class="video-container" controls playsinline>
+            <source src="videos/jk.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+
+        </div>
+        <div class="swiper-slide">
+          <div class="video-container">Vertical Video 2</div>
+        </div>
+        <div class="swiper-slide">
+          <div class="video-container">Vertical Video 3</div>
+        </div>
+        <div class="swiper-slide">
+          <div class="video-container">Vertical Video 4</div>
+        </div>
+        <div class="swiper-slide">
+          <div class="video-container">Vertical Video 5</div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        new Swiper('.swiper-container', {
+            direction: 'horizontal',
+            loop: true,
+            slidesPerView: 1,
+            spaceBetween: 0,
+            centeredSlides: true,
+        });
+    </script>
+  </body>
+</html>

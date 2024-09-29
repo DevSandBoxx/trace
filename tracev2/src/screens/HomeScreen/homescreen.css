@@ -1,0 +1,248 @@
+/* Basic CSS Reset */
+* {
+  font-family: "Poppins";
+  font-weight: 80;
+}
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.homescreen_title {
+  margin-bottom: 10px;
+  font-size: 3em;
+  background-image: linear-gradient(
+    270deg,
+    #ff4500,
+    #1e90ff,
+    #ff69b4,
+    #00ffff,
+    #8a2be2
+  );
+  background-size: 300% 300%; /* Larger size to make the transition smoother */
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-letter-animation 6s ease-in-out infinite; /* Longer duration for smoother flow */
+  display: inline-block;
+  background-position: 0% 50%;
+}
+
+/* Smooth continuous letter-by-letter gradient animation */
+@keyframes gradient-letter-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  /* min-height: 100%; */
+
+  /* line-height: 1.6; */
+  /* background: linear-gradient(135deg, #3b84cd, #703621); */
+  background: linear-gradient(
+    135deg,
+    black,
+    #703621
+  ); /* Blue and red gradient */
+  /* color: #333; */
+  padding: 20px;
+  /* margin: 20px; */
+}
+
+.feed_title {
+  margin-bottom: 10px;
+}
+
+main {
+  /* margin: 20px 0; */
+  color: white;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+section {
+  margin-bottom: 5px;
+}
+
+.video-home-container {
+  width: 500px;
+  height: 350px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.myVideo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 500px; /* Adjust this value as needed */
+  /* overflow: hidden; */
+  border-radius: 10px;
+  background-color: #000; /* Black background when no video */
+}
+
+.myVideo video {
+  aspect-ratio: 9 / 16;
+  max-width: 70%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cool-button {
+  /* background: linear-gradient(45deg, #1e90ff, #ff4500); Gradient from blue to red */
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 50px; /* Fully rounded button */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  cursor: pointer;
+  transition: all 0.3s ease-in-out; /* Smooth transition on hover */
+  margin: 10px;
+}
+
+.cool-button:hover {
+  /* background: linear-gradient(45deg, #ff4500, #1e90ff); Invert the gradient on hover */
+  background-color: white;
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+  color: black;
+  transform: translateY(-3px); /* Slight lift effect */
+}
+
+.recording-indicator {
+  display: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: red;
+  animation: blink 1s infinite;
+  margin: 20px;
+}
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.glass-square {
+  width: 500px;
+  height: 500px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-container {
+  position: relative;
+  margin: 20px;
+}
+
+input[type="text"] {
+  width: 300px;
+  padding: 15px 20px;
+  border: none;
+  /* border-radius: 10px; */
+  font-size: 16px;
+  color: #333;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border: 2px solid #703621; /* Change to your desired border color */
+  box-shadow: 0 4px 20px #e1460d;
+}
+
+input[type="text"]::placeholder {
+  color: #aaa; /* Placeholder color */
+  transition: color 0.3s ease;
+}
+
+input[type="text"]:focus::placeholder {
+  color: transparent; /* Hide placeholder on focus */
+}
+
+.underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 0;
+  background-color: #703621; /* Underline color */
+  transition: width 0.3s ease;
+}
+
+input[type="text"]:focus + .underline {
+  width: 100%; /* Underline expands on focus */
+}
+
+footer {
+  text-align: center;
+  position: absolute;
+
+  bottom: 0;
+  width: 100%;
+  /* padding: 20px; */
+  background-color: transparent;
+  color: #fff;
+}
+
+nav button {
+  background-color: transparent; /* Removes background */
+  border: none; /* Removes border */
+  color: white; /* Optional: Set text color */
+  font-size: 1.2em; /* Optional: Adjust font size */
+  cursor: pointer;
+}
+
+nav button:hover {
+  color: grey; /* Optional: Add hover effect */
+}
+
+nav div {
+  margin: 0 10px; /* Optional: Adds space between buttons */
+}

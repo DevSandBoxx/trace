@@ -19,8 +19,8 @@
             align-items: center;
         }
         .video-container {
-            width: 22.5vw;  /* Width set to 9% of the viewport width */
-            height: 40vw; /* Height set to 16% of the viewport width to maintain 9:16 aspect ratio */
+            width: 36vh;  /* Width set to 9% of the viewport width */
+            height: 64vh; /* Height set to 16% of the viewport width to maintain 9:16 aspect ratio */
             background-color: #000;
             display: flex;
             justify-content: center;
@@ -29,6 +29,57 @@
             font-family: Arial, sans-serif;
             font-size: 24px;
             border-radius: 10px;
+        }
+        .glow-box-right {
+            /* width: 10px; */
+            height: 100%;
+            background-color: transparent;
+            position: absolute;
+            right: 0;
+            top: 0;
+            border-radius: 10px;
+            box-shadow: none; /* No glow initially */
+            transition: box-shadow 0.3s ease-in-out;
+            animation: glowFromSide-right 1s ease forwards;
+            z-index: 2;
+        }
+
+        .glow-box-left {
+            /* width: 10px; */
+            height: 100%;
+            background-color: transparent;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 10px;
+            box-shadow: none; /* No glow initially */
+            transition: box-shadow 0.3s ease-in-out;
+            animation: glowFromSide-left 1s ease forwards;
+            z-index: 2;
+        }
+
+        @keyframes glowFromSide-left {
+            0% {
+                box-shadow: none;
+            }
+            50% {
+                box-shadow: -100px 0px 20px 10px rgb(128, 127, 127); /* Glow starts from the left */
+            }
+            100% {
+                box-shadow: 0px 0px 20px 10px white; /* Full glow around the box */
+            }
+          }
+
+        @keyframes glowFromSide-right {
+          0% {
+              box-shadow: none;
+          }
+          50% {
+              box-shadow: 100px 0px 20px 10px rgb(128, 127, 127); /* Glow starts from the left */
+          }
+          100% {
+              box-shadow: 0px 0px 20px 10px white; /* Full glow around the box */
+          }
         }
     </style>
   </head>
@@ -51,46 +102,68 @@
       <div class="swiper-wrapper">
         <div class="swiper-slide">
 
-          <video id="video" class="video-container" controls playsinline>
+          <video id="video1" class="video-container" controls playsinline loop>
             <source src="videos/jk.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
           <!-- Canvas element to draw poses on -->
+
           <canvas id="outputCanvas" width="180" height="320"
-            style="z-index: 1;"></canvas>
+            style="background-color: white; height:320; width:180; margin-left: 20px;"></canvas>
 
         </div>
         <div class="swiper-slide">
-          <div class="video-container">Vertical Video 2</div>
+          <video id="video2" class="video-container" controls playsinline loop>
+            <source src="videos/disco.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <canvas id="outputCanvas2" width="180" height="320"
+            style="background-color: white; height:320; width:180; margin-left: 20px;"></canvas>
         </div>
         <div class="swiper-slide">
-          <div class="video-container">Vertical Video 3</div>
+          <video id="video3" class="video-container" controls playsinline loop>
+            <source src="videos/waka.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <canvas id="outputCanvas3" width="180" height="320"
+            style="background-color: white; height:320; width:180; margin-left: 20px;"></canvas>
         </div>
         <div class="swiper-slide">
-          <div class="video-container">Vertical Video 4</div>
+          <video id="video3" class="video-container" controls playsinline loop>
+            <source src="videos/keep-up.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <canvas id="outputCanvas4" width="180" height="320"
+            style="background-color: white; height:320; width:180; margin-left: 20px;"></canvas>
         </div>
         <div class="swiper-slide">
-          <div class="video-container">Vertical Video 5</div>
+          <video id="video3" class="video-container" controls playsinline loop>
+            <source src="videos/wanna-be.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <canvas id="outputCanvas5" width="180" height="320"
+            style="background-color: white; height:320; width:180; margin-left: 20px;"></canvas>
         </div>
       </div>
-    </div>
+      <div class="glow-box-right"></div>
+      <div class="glow-box-left"></div>
 
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script>
+      <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+      <script>
         new Swiper('.swiper-container', {
             direction: 'horizontal',
             loop: true,
             slidesPerView: 1,
-            spaceBetween: 0,
+            spaceBetween: 100,
             centeredSlides: true,
         });
     </script>
 
-    <!-- TensorFlow.js and Pose Detection Model Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/@tensorflow-models/pose-detection"></script>
-    <!-- Link to your JavaScript file -->
-    <script src="app.js"></script>
-  </body>
-</html>
+      <!-- TensorFlow.js and Pose Detection Model Scripts -->
+      <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+      <script
+        src="https://cdn.jsdelivr.net/npm/@tensorflow-models/pose-detection"></script>
+      <!-- Link to your JavaScript file -->
+      <script src="app.js"></script>
+    </body>
+  </html>

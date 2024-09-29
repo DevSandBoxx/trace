@@ -1,3 +1,26 @@
+
+// Create an IntersectionObserver instance
+const observer = new IntersectionObserver(handleIntersection, {
+    threshold: 0.5 // Video must be 50% visible to trigger
+});
+
+// Select all video elements to observe
+const videos = document.querySelectorAll('video');
+// const canvas = document.querySelectorAll('canvas');
+
+// console.log(canvas);
+
+videos.forEach(video => {
+    observer.observe(video);
+});
+
+// canvas.forEach(canva => {
+//     observer.observe(canva);
+// });
+
+
+// Import the required TensorFlow.js and Pose Detection library
+// function pose_estimator(id, id_canvas,) {
 // Import the required TensorFlow.js and Pose Detection library
 document.addEventListener('DOMContentLoaded', async () => {
     try {
@@ -7,11 +30,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         console.log('MoveNet detector initialized:', detector);
 
         // Get the video and canvas elements
-        const videoElement = document.getElementById('video');
+        const videoElement = document.getElementById('video1');
         const canvas = document.getElementById('outputCanvas');
         const ctx = canvas.getContext('2d');
-
-        // console.log(videoElement);
 
         // Define keypoint pairs to draw edges (limbs)
         const keypointPairs = [
@@ -31,15 +52,15 @@ document.addEventListener('DOMContentLoaded', async () => {
         // Function to set up the video source and play
         function setupVideo() {
             videoElement.src = 'videos/jk.mp4'; // Replace with the correct path to your video file
-            videoElement.play();
+            // videoElement.play();
         }
 
         // Event listener for when the video loads
         videoElement.onloadeddata = async () => {
             console.log('Video data loaded, starting pose detection');
             // Adjust canvas size to match the video dimensions
-            canvas.width = videoElement.videoWidth;
-            canvas.height = videoElement.videoHeight;
+            canvas.width = videoElement.videoWidth / 2.5;
+            canvas.height = videoElement.videoHeight / 2.5;
 
             // Start detecting poses as the video plays
             videoElement.addEventListener('play', async () => {
@@ -113,3 +134,28 @@ document.addEventListener('DOMContentLoaded', async () => {
         console.error('Error initializing MoveNet detector or video:', error);
     }
 });
+
+
+
+
+// Function to pause video when it's out of view
+function handleIntersection(entries, observer) {
+    entries.forEach(entry => {
+        const video = entry.target;
+        // const canvas = entry.nextElementSibling;
+
+        // console.log(video);
+        // console.log(canvas);
+        if (entry.isIntersecting) {
+            // pose_estimator(video, canvas);
+            video.play(); // Play video when it's in the viewport
+
+
+        } else {
+            video.pause(); // Pause video when it's out of the viewport
+        }
+    });
+}
+
+
+

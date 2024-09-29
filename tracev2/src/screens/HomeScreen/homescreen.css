@@ -90,18 +90,20 @@ section {
   box-sizing: border-box;
 }
 
-.video {
-  /* display: "flex";
-  justify-content: "center"; */
+.myVideo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  height: 200px; /* Adjust this value as needed */
-  overflow: hidden;
+  height: 500px; /* Adjust this value as needed */
+  /* overflow: hidden; */
   border-radius: 10px;
   background-color: #000; /* Black background when no video */
 }
 
-.video video {
-  max-width: 100%;
+.myVideo video {
+  aspect-ratio: 9 / 16;
+  max-width: 70%;
   height: 100%;
   object-fit: cover;
 }

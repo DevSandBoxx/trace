@@ -203,11 +203,11 @@ const HomeScreen = () => {
                   stop
                 </button>
               </div>
-              <div className="video">
+              <div className="myVideo">
                 <video
-                  //   className="aspect"
+                  // className="aspect"
                   ref={videoRef}
-                  style={{ width: "inherit", height: "inherit" }}
+                  //   style={{ width: "inherit", height: "inherit" }}
                   autoPlay
                   playsInline
                 ></video>

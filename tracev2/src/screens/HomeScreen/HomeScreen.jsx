@@ -5,6 +5,7 @@ import './homescreen.css';
 import { signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../../../firebase";
+import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
 
 const HomeScreen = () => {
     const [webcamStream, setWebcamStream] = useState(null);
@@ -90,30 +91,65 @@ const HomeScreen = () => {
           // Handle logout error (e.g., show an error message)
         }
       };
+
+  const uploadToGCS = async () => {
+    console.log("hello");
+    const storage = getStorage();
+    const storageRef = ref(storage, `videos/${Date.now()}.webm`);
+
+    const metadata = { type: "video/webm" };
+
+    const blob = new Blob(recordedChunks, metadata);
+
+    let downloadURL = "";
+
+    try {
+      const snapshot = await uploadBytes(storageRef, blob);
+      downloadURL = await getDownloadURL(snapshot.ref);
+      console.log(downloadURL);
+      deleteChunks();
+      window.alert("Success: " + downloadURL);
+    } catch (error) {
+      console.error("Problem getting download url", error);
+      console.error("File upload failed", error);
+    }
+  };
+
+  const deleteChunks = () => {
+    setRecordedChunks([]);
+  };
+
+    const switchToFeed = async () => {
+        navigate("/feed");
+    }
     
 
     return (
         <>
             <header>
-                <h1>--- TRACE ---</h1>
+                <h1 style={{fontFamily:"Poppins", fontWeight:"lighter"}} className='homescreen_title'>trace ai</h1>
             </header>
 
             <nav>
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <div>
-                    <a href="/" style={{ color: 'white', textDecoration: 'none', listStyleType: 'none', margin: '10px' }}>Home</a>
+                <div style={{ display: 'flex', justifyContent: 'center', gap: '2em', backgroundColor: 'transparent' }}>
+                    <div>
+                        <button>home</button>
+                    </div>
+                    <div>
+                        <button onClick={switchToFeed}>feed</button>
+                    </div>
+                    <div>
+                        <button onClick={handleLogOut}>logout</button>
+                    </div>
+                    
                 </div>
-                <div>
-                    <button onClick={handleLogOut}>Logout</button>
-                </div>
-            </div>
             </nav>
             <main>
                 <section>
                     <div style={{ display: 'flex', flexDirection: 'row' }}>
-                        <h2>Upload Video</h2>
+                        <h2></h2>
                         <div className="recording-indicator" ref={recordingIndicatorRef}></div>
-                        <a ref={downloadLinkRef} style={{ display: 'none', margin: '20px', color: 'white', textDecoration: 'none' }}>Download Video</a>
+                        <a ref={downloadLinkRef} style={{ display: 'none', margin: '20px', color: 'white', textDecoration: 'none' }}>download video</a>
                     </div>
                     <div style={{ width: '100%', display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
                         <div>
@@ -121,16 +157,17 @@ const HomeScreen = () => {
                         </div>
                         <div>
                             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                                <button className="cool-button" onClick={startWebcam}>Start</button>
-                                <button className="cool-button" onClick={stopWebcam}>Stop</button>
+                                <button className="cool-button" onClick={startWebcam}>start</button>
+                                <button className="cool-button" onClick={stopWebcam}>stop</button>
                             </div>
                             <div className="video">
                                 <video ref={videoRef} style={{ width: 'inherit', height: 'inherit' }} autoPlay playsInline></video>
                             </div>
                             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                                 <p ref={statusRef}></p>
-                                <button className="cool-button" onClick={startRecording} disabled={isRecording}>Record</button>
-                                <button className="cool-button" onClick={stopRecording} disabled={!isRecording}>End</button>
+                                <button className="cool-button" onClick={startRecording} disabled={isRecording}>record</button>
+                                <button className="cool-button" onClick={stopRecording} disabled={!isRecording}>end</button>
+                                <button className="cool-button" onClick={uploadToGCS} disabled={webcamStream && recordedChunks.length > 0 && !isRecording}>Upload to Firebase</button>
                             </div>
                         </div>
                         <div>

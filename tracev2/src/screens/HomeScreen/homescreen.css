@@ -1,10 +1,39 @@
 /* Basic CSS Reset */
-
+* {
+  font-family: "Poppins";
+  font-weight: 80;
+}
 html, body {
   margin: 0; 
   height: 100%; 
   overflow: hidden
 }
+
+.homescreen_title {
+  margin-bottom: 10px;
+  font-size: 3em;
+  background-image: linear-gradient(270deg, #ff4500, #1e90ff, #ff69b4, #00FFFF, #8a2be2);
+  background-size: 300% 300%; /* Larger size to make the transition smoother */
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-letter-animation 6s ease-in-out infinite; /* Longer duration for smoother flow */
+  display: inline-block;
+  background-position: 0% 50%;
+}
+
+/* Smooth continuous letter-by-letter gradient animation */
+@keyframes gradient-letter-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 
 body {
   font-family: 'Roboto', sans-serif;
@@ -18,17 +47,7 @@ body {
   /* margin: 20px; */
 }
 
-header {
-  /* background-color: #333; */
-  color: #fff;
-  /* padding: 10px 0; */
-  text-align: center;
-  background-color: transparent;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
-
-}
-
-header h1 {
+.feed_title {
   margin-bottom: 10px;
 }
 
@@ -42,7 +61,7 @@ section {
   margin-bottom: 5px;
 }
 
-.video {
+.video-container {
   width: 500px; /* Width of the rectangle */
   height: 350px; /* Height of the rectangle */
   border-radius: 20px; /* Rounded corners */
@@ -50,7 +69,6 @@ section {
   backdrop-filter: blur(10px); /* Background blur */
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   border: 1px solid rgba(255, 255, 255, 0.3); /* Slight border to enhance glass look */
-  
   color: #fff; /* Text color */
 }
 
@@ -170,4 +188,20 @@ footer {
   /* padding: 20px; */
   background-color: transparent;
   color: #fff;
+}
+
+nav button {
+  background-color: transparent; /* Removes background */
+  border: none; /* Removes border */
+  color: white; /* Optional: Set text color */
+  font-size: 1.2em; /* Optional: Adjust font size */
+  cursor: pointer;
+}
+
+nav button:hover {
+  color: grey; /* Optional: Add hover effect */
+}
+
+nav div {
+  margin: 0 10px; /* Optional: Adds space between buttons */
 }

@@ -51,24 +51,20 @@ const Login = () => {
     return () => unsubscribe();
   }, []);
 
-  const handleBackToMainPage = () => {
-    window.location.href = '/'; // Redirect to the main page
-  };
-
   return (
     <div>
       <header>
-        <h1>--- TRACE ---</h1>
+        <h1 className='login_title'>trace ai</h1>
       </header>
       <main style={{ width: '100%', marginTop: '5%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         <section>
           <div className="glass-square">
-            <h1>Share Ur Creativity</h1>
+            <h1>share your <span className="creativity">creativity</span></h1>
             <form id="loginForm">
               <div className="input-container">
                 <input
                   type="text"
-                  placeholder="Enter your Email here..."
+                  placeholder="email here"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -79,7 +75,7 @@ const Login = () => {
               <div className="input-container">
                 <input
                   type="password"
-                  placeholder="Enter your Password here..."
+                  placeholder="password here"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
@@ -88,18 +84,17 @@ const Login = () => {
               </div>
               <br />
               <div>
-                <button className="cool-button" type="submit" onClick={handleLogin}>Log in</button>
-                <button className="cool-button" type="submit" onClick={handleRegister}>Register</button>
+                <button className="cool-button" type="submit" onClick={handleLogin}>log in</button>
+                <button className="cool-button" type="submit" onClick={handleRegister}>register</button>
               </div>
               
             </form>
-            <button className="cool-button" onClick={handleBackToMainPage}>Back to Main Page</button>
           </div>
         </section>
       </main>
       <footer>
-        <p>&copy; TRACE</p>
-        <p>Contributors - Basil Khwaja, Heet Shah, Arvind, Areeb Ehsan</p>
+        <p>&copy; trace ai</p>
+        <p>contributors - basil khwaja, heet shah, arvind ganeshkumar, areeb ehsan</p>
       </footer>
     </div>
   );

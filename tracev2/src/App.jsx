@@ -1,3 +1,4 @@
+import Feed from './screens/FeedScreen/Feed';
 import HomeScreen from './screens/HomeScreen/HomeScreen';
 import Login from './screens/LoginScreen/Login';
 
@@ -10,6 +11,7 @@ const App = () => {
             <Routes>
                 <Route path="/" element={<Login />} />
                 <Route path="/home" element={<HomeScreen />} />
+                <Route path="/feed" element={<Feed />} />
             </Routes>
         </Router>
     );

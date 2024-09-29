@@ -7,7 +7,7 @@ html, body {
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  /* font-family: 'Roboto', sans-serif; */
   /* min-height: 100%; */
   
   /* line-height: 1.6; */
@@ -24,18 +24,18 @@ header {
   /* padding: 10px 0; */
   text-align: center;
   background-color: transparent;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+  /* font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ; */
 
 }
 
-header h1 {
+.login_title {
   margin-bottom: 10px;
 }
 
 main {
   /* margin: 20px 0; */
   color: white;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+  /* font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ; */
 }
 
 section {
@@ -64,7 +64,7 @@ section {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  font-family: 'Montserrat', sans-serif;
+  /* font-family: 'Montserrat', sans-serif; */
   border-radius: 50px; /* Fully rounded button */
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
   cursor: pointer;
@@ -108,13 +108,35 @@ section {
   justify-content: center;
   align-items: center;
   color: white;
-  font-family: Arial, sans-serif;
+  /* font-family: Arial, sans-serif; */
   font-size: 24px;
   text-align: center;
   display: flex;
   flex-direction: column;
 }
 
+.creativity {
+  background-image: linear-gradient(270deg, #ff4500, #1e90ff, #ff69b4, #00FFFF, #8a2be2);
+  background-size: 300% 300%; /* Larger size to make the transition smoother */
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: creativity-animation 6s ease-in-out infinite; /* Continuous smooth flow */
+  display: inline-block;
+  background-position: 0% 50%;
+}
+
+/* Smooth continuous letter-by-letter gradient animation */
+@keyframes creativity-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 .input-container {
   position: relative;
   margin: 20px;
@@ -127,7 +149,8 @@ input[type="text"] {
   /* border-radius: 10px; */
   font-size: 16px;
   color: #333;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.2);
+
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: border 0.3s ease, box-shadow 0.3s ease;
 }
@@ -154,7 +177,7 @@ input[type="password"] {
   /* border-radius: 10px; */
   font-size: 16px;
   color: #333;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: border 0.3s ease, box-shadow 0.3s ease;
 }

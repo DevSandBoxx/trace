@@ -1,0 +1,347 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 2741,
+      "max": [
+        7.4584879875183105,
+        177.5144805908203,
+        50.01601028442383
+      ],
+      "min": [
+        -7.458740234375,
+        -38.64057922363281,
+        -50.001094818115234
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 32892,
+      "componentType": 5126,
+      "count": 2741,
+      "max": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -0.9999999403953552,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 2741,
+      "max": [
+        0.9999995827674866,
+        1.0,
+        0.9982883930206299,
+        1.0
+      ],
+      "min": [
+        -0.9999971389770508,
+        -0.9999960660934448,
+        -0.8717109560966492,
+        1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 2741,
+      "max": [
+        0.9880126118659973,
+        0.9975207448005676
+      ],
+      "min": [
+        0.0024790954776108265,
+        0.0024734653998166323
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 21928,
+      "componentType": 5126,
+      "count": 2741,
+      "max": [
+        0.9880126118659973,
+        0.9975207448005676
+      ],
+      "min": [
+        0.0024790954776108265,
+        0.0024734653998166323
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 43856,
+      "componentType": 5126,
+      "count": 2741,
+      "max": [
+        0.9880126118659973,
+        0.9975207448005676
+      ],
+      "min": [
+        0.0024790954776108265,
+        0.0024734653998166323
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 65784,
+      "componentType": 5126,
+      "count": 2741,
+      "max": [
+        0.9880126118659973,
+        0.9975207448005676
+      ],
+      "min": [
+        0.0024790954776108265,
+        0.0024734653998166323
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 7461,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "Wrotzal (https://sketchfab.com/Wrotzal)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/free-axe-sylvaxe-47ee9c9f4ef44a489d8521ba9786ad6a",
+      "title": "FREE Axe Sylvaxe"
+    },
+    "generator": "Sketchfab-16.16.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 29844,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 87712,
+      "byteOffset": 29844,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 65784,
+      "byteOffset": 117556,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 43856,
+      "byteOffset": 183340,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 227196,
+      "uri": "scene.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "textures/Sylvaxe_baseColor.png"
+    },
+    {
+      "uri": "textures/Sylvaxe_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/Sylvaxe_emissive.png"
+    },
+    {
+      "uri": "textures/Sylvaxe_normal.png"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "emissiveTexture": {
+        "index": 2
+      },
+      "name": "Sylvaxe",
+      "normalTexture": {
+        "index": 3
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicRoughnessTexture": {
+          "index": 1
+        }
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Sylvaxe_Sylvaxe_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3,
+            "TEXCOORD_1": 4,
+            "TEXCOORD_2": 5,
+            "TEXCOORD_3": 6
+          },
+          "indices": 7,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        0.99817955493927,
+        0.057018008083105094,
+        -0.01966149918735026,
+        0.0,
+        0.059910599142313004,
+        -0.8997766971588136,
+        0.4322182834148405,
+        0.0,
+        0.006953266449272633,
+        -0.4326093792915342,
+        -0.9015546441078187,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "matrix": [
+        0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.009999999776482582,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "e91aa7fbd7474fc0a5cda0c9d839efa1.fbx"
+    },
+    {
+      "children": [
+        3
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        4
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        1.0,
+        0.0,
+        0.0,
+        -1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sylvaxe"
+    },
+    {
+      "mesh": 0,
+      "name": "Sylvaxe_Sylvaxe_0"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    },
+    {
+      "sampler": 0,
+      "source": 3
+    }
+  ]
+}

@@ -3,16 +3,24 @@
   font-family: "Poppins";
   font-weight: 80;
 }
-html, body {
-  margin: 0; 
-  height: 100%; 
-  overflow: hidden
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
 }
 
 .homescreen_title {
   margin-bottom: 10px;
   font-size: 3em;
-  background-image: linear-gradient(270deg, #ff4500, #1e90ff, #ff69b4, #00FFFF, #8a2be2);
+  background-image: linear-gradient(
+    270deg,
+    #ff4500,
+    #1e90ff,
+    #ff69b4,
+    #00ffff,
+    #8a2be2
+  );
   background-size: 300% 300%; /* Larger size to make the transition smoother */
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -34,14 +42,17 @@ html, body {
   }
 }
 
-
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   /* min-height: 100%; */
-  
+
   /* line-height: 1.6; */
   /* background: linear-gradient(135deg, #3b84cd, #703621); */
-  background: linear-gradient(135deg, black, #703621); /* Blue and red gradient */
+  background: linear-gradient(
+    135deg,
+    black,
+    #703621
+  ); /* Blue and red gradient */
   /* color: #333; */
   padding: 20px;
   /* margin: 20px; */
@@ -54,22 +65,45 @@ body {
 main {
   /* margin: 20px 0; */
   color: white;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 section {
   margin-bottom: 5px;
 }
 
-.video-container {
-  width: 500px; /* Width of the rectangle */
-  height: 350px; /* Height of the rectangle */
-  border-radius: 20px; /* Rounded corners */
-  background: rgba(255, 255, 255, 0.2); /* Transparent white background */
-  backdrop-filter: blur(10px); /* Background blur */
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  border: 1px solid rgba(255, 255, 255, 0.3); /* Slight border to enhance glass look */
-  color: #fff; /* Text color */
+.video-home-container {
+  width: 500px;
+  height: 350px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.video {
+  /* display: "flex";
+  justify-content: "center"; */
+  width: 100%;
+  height: 200px; /* Adjust this value as needed */
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: #000; /* Black background when no video */
+}
+
+.video video {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .cool-button {
@@ -82,7 +116,7 @@ section {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   border-radius: 50px; /* Fully rounded button */
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
   cursor: pointer;
@@ -108,9 +142,15 @@ section {
   margin: 20px;
 }
 @keyframes blink {
-  0% { opacity: 1; }
-  50% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .glass-square {
@@ -164,7 +204,6 @@ input[type="text"]:focus::placeholder {
   color: transparent; /* Hide placeholder on focus */
 }
 
-
 .underline {
   position: absolute;
   bottom: 0;
@@ -182,7 +221,7 @@ input[type="text"]:focus + .underline {
 footer {
   text-align: center;
   position: absolute;
-  
+
   bottom: 0;
   width: 100%;
   /* padding: 20px; */

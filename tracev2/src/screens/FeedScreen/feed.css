@@ -4,7 +4,7 @@ body {
   margin: 0;
   height: 100%;
   overflow: hidden;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background: linear-gradient(135deg, black, #703621);
   padding: 20px;
 }
@@ -12,7 +12,14 @@ body {
 .feed_title {
   margin-bottom: 10px;
   font-size: 3em;
-  background-image: linear-gradient(270deg, #ff4500, #1e90ff, #ff69b4, #00FFFF, #8a2be2);
+  background-image: linear-gradient(
+    270deg,
+    #ff4500,
+    #1e90ff,
+    #ff69b4,
+    #00ffff,
+    #8a2be2
+  );
   background-size: 300% 300%; /* Larger size to make the transition smoother */
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -73,7 +80,8 @@ nav a {
   border-radius: 10px;
 }
 
-.glow-box-right, .glow-box-left {
+.glow-box-right,
+.glow-box-left {
   height: 100%;
   background-color: transparent;
   position: absolute;
@@ -94,13 +102,25 @@ nav a {
 }
 
 @keyframes glowFromSide-left {
-  0% { box-shadow: none; }
-  50% { box-shadow: -100px 0px 20px 10px rgb(128, 127, 127); }
-  100% { box-shadow: 0px 0px 20px 10px white; }
+  0% {
+    box-shadow: none;
+  }
+  50% {
+    box-shadow: -100px 0px 20px 10px rgb(128, 127, 127);
+  }
+  100% {
+    box-shadow: 0px 0px 20px 10px white;
+  }
 }
 
 @keyframes glowFromSide-right {
-  0% { box-shadow: none; }
-  50% { box-shadow: 100px 0px 20px 10px rgb(128, 127, 127); }
-  100% { box-shadow: 0px 0px 20px 10px white; }
+  0% {
+    box-shadow: none;
+  }
+  50% {
+    box-shadow: 100px 0px 20px 10px rgb(128, 127, 127);
+  }
+  100% {
+    box-shadow: 0px 0px 20px 10px white;
+  }
 }

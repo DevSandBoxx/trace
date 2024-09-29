@@ -5,7 +5,6 @@ As artists, it is in our DNA to allow us to create and portray our feelings and 
 
 - `cd tracev2`
 - `npm install`
-- modify firebase.js with your configuration
 - `npm run dev`
 
 
